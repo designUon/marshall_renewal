@@ -1,0 +1,128 @@
+.main_video{
+    width: 100%;
+    height: 100vh;
+    /* background-image: url("https://i.vimeocdn.com/video/1424898755-40ed7b3079d95e8f3b99ded84feb80e8ab074b5a592c222ae6ef66ad4114df52-d?autoplay&muted&loop"); */
+    overflow: hidden;
+}
+
+
+/* ------------------ main slide ------------------ */
+
+
+
+
+.swiper {
+    width: 100%;
+    height: 90vh;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#swiper1 .swiper-slide:nth-child(1){
+    background-image: url(../../public/marshall_slide_01.jpg);
+}
+
+#swiper1 .swiper-slide:nth-child(2){
+    background-image: url(../../public/marshall_slide_03.jpg);
+}
+
+#swiper1 .swiper-slide:nth-child(3){
+    background-image: url(../../public/marshall_slide_04.jpeg);
+}
+
+#swiper1 .swiper-slide:nth-child(4){
+    background-image: url(../../public/marshall_slide_05.jpeg);
+}
+
+
+:root {
+    --swiper-theme-color: #E2DDC9;
+}
+
+
+
+
+
+/* ------------------ main product ------------------ */
+
+
+
+.product_warp{
+    width: 100%;
+    height: 600px;
+    margin: 0;
+}
+
+.product_warp li{
+    width: 25%;
+    height: 600px;
+    /* border: 1px solid #E2DDC9; */
+    float: left;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.product_warp a{
+    color: #E2DDC9;
+}
+
+.product_warp a li{
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position-x: 50px;
+    background-position-y: 100px;
+    overflow: hidden;
+}
+
+.product_warp a li:hover{
+    /* transform: scale(1.1); */
+    transition: all 0.5s;
+    background-color: #303030;
+}
+
+.product_warp a:nth-child(1)>li{
+    background-image: url("../../public/marshall-stanmore-iii-black.png");
+}
+
+.product_warp a:nth-child(2)>li{
+    background-image: url("../../public/plp-diamond-jubilee-monitor-ii-anc-v2.png");
+}
+
+.product_warp a:nth-child(3)>li{
+    background-image: url("../../public/plp-diamond-jubilee-motif-anc-v2.png");
+}
+
+.product_warp a:nth-child(4)>li{
+    background-image: url("../../public/speaker-audio-cable-35mm-black.png");
+    background-position-x: 80px;
+    background-position-y: 170px;
+}
+
+.product_warp a li div{
+    rotate: 90deg;
+    text-align: left;
+    position: relative;
+    top: 205px;
+    left: -220px;
+    /* border: 1px solid wheat; */
+    font-size: 50px;
+    opacity: 0.15;
+    font-weight: lighter;
+}

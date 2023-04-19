@@ -1,0 +1,29 @@
+(function(exports){var config={cj:{parameterName:'cjevent',cookieName:'cj_event',maxCookieAge:45*(60*24*60),lookBackDays:45,strategy:'replace'}};function getConfig(affiliate){if(affiliate in config){return config[affiliate];}
+return false;}
+function getClickId(affiliate){var clickId='',data,queryString=window.location.search.substring(1),queryParams=queryString.split('&'),config=getConfig(affiliate);if(!config){return false;}
+for(var i=0;i<queryParams.length;i++){data=queryParams[i].split('=');if(data[0]===config.parameterName){clickId=data[1];}}
+return clickId;}
+function getCookieData(affiliate){var clickCookie,cookies=document.cookie.split(';'),config=getConfig(affiliate);if(!config){return false;}
+cookies.forEach(function(cookie){var parts=cookie.split('='),cookieName=parts[0],cookieValue=parts[1];if(cookieName.trim()===config.cookieName){clickCookie=cookieValue;}});return clickCookie;}
+function checkLookbackPeriod(affiliate){var cookieData=getCookieData(affiliate)||'[]',clickData=[],currDate=new Date(Date.now()),cookieDataParsed=JSON.parse(cookieData),config=getConfig(affiliate);if(!config){return;}
+if(cookieDataParsed&&cookieDataParsed.length>0){for(var i=0;i<cookieDataParsed.length;i++){var dateStr=cookieDataParsed[i].date,compDate=new Date(dateStr.substring(0,4)
++'-'+dateStr.substring(4,6)
++'-'+dateStr.substring(6,8)),timeDiff=Math.abs(currDate.getTime()-compDate.getTime()),daysDiff=Math.ceil(timeDiff/(1000*3600*24));if(daysDiff<=config.lookBackDays){clickData.push(cookieDataParsed[i]);}}
+document.cookie=config.cookieName
++'='
++JSON.stringify(clickData)
++';max-age='+config.maxCookieAge
++';path=/';cookieDataParsed=clickData;}}
+function captureClickId(affiliate){var cookieData=getCookieData(affiliate)||'[]',clickId=getClickId(affiliate),config=getConfig(affiliate),cookieDataParsed=JSON.parse(cookieData),newValue;if(!config){return;}
+if(clickId!==''){var now=new Date(Date.now()),date=now.getFullYear()
++('0'+(now.getMonth()+1)).slice(-2)
++('0'+now.getDate()).slice(-2),duplicate=false;for(var i=0;i<cookieDataParsed.length;i++){if(clickId===cookieDataParsed[i].id){duplicate=true;break;}}
+newValue={'id':clickId,'date':date};if(config.strategy==='replace'){cookieDataParsed=[];}
+if(!duplicate||config.strategy==='replace'){cookieDataParsed.push(newValue);document.cookie=config.cookieName
++'='
++JSON.stringify(cookieDataParsed)
++';max-age='+config.maxCookieAge
++';path=/';}}}
+for(var affiliate in config){checkLookbackPeriod(affiliate);captureClickId(affiliate);}
+exports.affiliateApi={getClickIdsAsString:function(affiliate){var ids=[];cookieData=getCookieData(affiliate);if(!cookieData){return false;}
+cookieData=JSON.parse(cookieData);cookieData.forEach(function(obj){ids.push(obj.id);});return ids.join();}};})(window);

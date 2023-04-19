@@ -1,0 +1,68 @@
+.product_wrap {
+    width: 100%;
+    /* height: 100vh; */
+}
+
+.product_slide {
+    /* border: 1px solid #E2DDC9; */
+    height: 50vh;
+    /* line-height: 35vh; */
+    box-sizing: border-box;
+}
+
+
+
+
+#swiper2 .swiper {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+#swiper2 .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    /* width: 300px;
+    height: 300px; */
+    width: 500px;
+    height: 500px;
+    background-color: transparent;
+}
+
+#swiper2 .swiper-slide img {
+    display: block;
+    width: 100%;
+}
+
+
+
+
+#swiper2 .swiper-slide:nth-child(1) {
+    background-image: url(../../public/mh-monitor-II-ANC-medium.png);
+}
+
+#swiper2 .swiper-slide:nth-child(2) {
+    background-image: url(../../public/plp-marshall-motif-anc-black.png);
+}
+
+#swiper2 .swiper-slide:nth-child(3) {
+    background-image: url(../../public/006_marshall-stockwell-ii-black-brass.png);
+}
+
+#swiper2 .swiper-slide:nth-child(4) {
+    background-image: url(../../public/007_marshall-emberton-ii-black-brass.png);
+}
+
+#swiper2 .swiper-slide:nth-child(5) {
+    background-image: url(../../public/004_pl-marshall-speakers-woburn-ii-black-1700x1700.png);
+}
+
+
+.swiper-3d .swiper-slide-shadow-right {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
+    /* background-image: transparent; */
+}
+
+.swiper-3d .swiper-slide-shadow-left {
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
+}

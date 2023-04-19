@@ -1,0 +1,81 @@
+.login_wrap{
+    width: 100%;
+    height: 50vh;
+    /* border-bottom: 1px solid #E2DDC9;
+    border-top: 1px solid #E2DDC9;
+    box-sizing: border-box; */
+    /* background-color: antiquewhite; */
+}
+
+.login_box{
+    width: 500px;
+    margin: 20vh auto;
+    font-size: 15px;
+    /* border: 1px solid #E2DDC9; */
+}
+
+.login_box input{
+    width: 250px;
+    height: 25px;
+    margin-bottom: 5px;
+    padding: 5px;
+}
+
+.login_btn, .join_btn, .naver_login, .kakao_login{
+    width: 260px;
+    height: 25px;
+    margin: 0 auto;
+    line-height: 25px;
+}
+
+.login_btn{
+    border: 1px solid #E2DDC9;
+    background-color: #E2DDC9;
+    color: #181818;
+    line-height: 27px;
+    margin-top: 20px;
+
+}
+
+.join_btn{
+    border-bottom: 1px solid #E2DDC9;
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+.find_btn{
+    width: 50%;
+    margin: 0 auto;
+    height: 25px;
+    font-size: 12px;
+    line-height: 25px;
+    /* border: 1px solid #E2DDC9; */
+}
+
+.find_btn li{
+    width: 50%;
+    float: left;
+}
+
+.naver_login{
+    /* background-color: #00c542; */
+    border: 1px solid #00c542;
+    color: #00c542;
+    font-size: 13px;
+    margin-top: 15px;
+}
+
+.naver_login{
+    /* background-color: #00c542; */
+    border: 1px solid #00c542;
+    color: #00c542;
+    font-size: 13px;
+}
+
+.kakao_login{
+    /* background-color: #00c542; */
+    border: 1px solid #ffd900;
+    color: #ffd900;
+    font-size: 13px;
+    margin-top: 4px;
+}
